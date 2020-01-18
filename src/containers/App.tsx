@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Route, Router, Switch, Redirect } from "react-router-dom";
+import { Redirect, Route, Router, Switch } from "react-router-dom";
 import NotFound from "../components/NotFound";
 import history from "../utils/history";
 import Add from "./Add";
@@ -13,7 +13,16 @@ interface Props {}
  * @author
  * @function @App
  **/
-
+/**
+ ** TODO
+ * 1: responsive
+ * 2: Secure site with auth
+ * 3: backend
+ */
+/**
+ *
+ * @param props
+ */
 const App: FC<Props> = props => {
   return (
     <div className="container">

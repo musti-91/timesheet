@@ -40,10 +40,10 @@ const AddDate: FC<Props> = ({ asyncState, onAddDate, onCancel }) => {
 
   return (
     <div className={"add-date"}>
-      <h2>Add Date</h2>
+      <h2>{asyncState && asyncState.title ? "Modify Date" : "Add Date"}</h2>
       <form className="form-group" onSubmit={submitForm}>
         <div className="time-fields">
-          <div>
+          <div className="field">
             <label htmlFor="start-time">Start Time</label>
             <input
               type="time"
@@ -53,7 +53,7 @@ const AddDate: FC<Props> = ({ asyncState, onAddDate, onCancel }) => {
               {...startTime}
             />
           </div>
-          <div>
+          <div className="field">
             <label htmlFor="leaving-time">Leaving Time</label>
             <input
               type="time"
@@ -64,7 +64,7 @@ const AddDate: FC<Props> = ({ asyncState, onAddDate, onCancel }) => {
             />
           </div>
         </div>
-        <div>
+        <div className="field">
           <label htmlFor="title">Title</label>
           <input
             type="text"
@@ -75,7 +75,7 @@ const AddDate: FC<Props> = ({ asyncState, onAddDate, onCancel }) => {
             {...title}
           />
         </div>
-        <div>
+        <div className="field">
           <label htmlFor="description">Description</label>
           <textarea
             className="description-field"
@@ -88,7 +88,7 @@ const AddDate: FC<Props> = ({ asyncState, onAddDate, onCancel }) => {
         </div>
         <div className="buttons">
           <button className="button" type="submit">
-            Submit
+            Add
           </button>
           <button className="button" onClick={onCancel}>
             Cancel

@@ -1,27 +1,30 @@
 @import "../styles/variables";
 .add-date {
+  max-width: 60em;
   background-color: $blue;
   padding: 0.4em;
   display: flex;
+  height: auto;
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
   border-radius: 0.2em;
   color: $white;
+  h2 {
+    font-size: 5em;
+  }
 }
 .form-group {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  > div {
-    margin: 1em 0;
-  }
 }
 .time-fields {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: baseline;
+  flex-direction: column;
 }
 .input-time,
 .title-field,
@@ -30,14 +33,8 @@
   outline: 0;
   border-radius: 0.2em;
   padding: 0.8em;
-  width: 8em;
-  font-size: 1em;
   text-transform: capitalize;
-  margin: 0 1em;
   color: $orange;
-  &::placeholder {
-    color: $orange;
-  }
 }
 .title-field {
   width: 21em;
@@ -54,14 +51,47 @@
   display: flex;
   justify-content: space-evenly;
   align-items: baseline;
+  margin-bottom: 1em;
+  margin-left: 3em;
   .button {
     outline: none;
     border: 0;
     border-radius: 0.1em;
-    font-size: 2em;
-    color: $orange;
+    font-size: 4em;
+    padding: 0.2em 0.7em;
+    color: $blue;
+    background-color: $grey;
+    transition: all 700ms;
     &:last-child {
+      background-color: $grey;
       color: $red;
+    }
+    &:hover {
+      color: $dark_rose;
+    }
+  }
+}
+.field {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  margin-left: 2em;
+  width: 100%;
+  label {
+    font-size: 2em;
+    margin-right: 1em;
+    width: 10%;
+  }
+  input,
+  textarea {
+    font-size: 2em;
+    margin-left: 1em;
+    color: $dark_rose;
+    &::placeholder {
+      color: $grey;
+    }
+    &:focus {
+      border-color: $dark_rose;
     }
   }
 }
