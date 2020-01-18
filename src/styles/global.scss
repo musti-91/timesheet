@@ -1,0 +1,60 @@
+@import "./_variables";
+
+html {
+  box-sizing: border-box;
+}
+body {
+  background-color: $green;
+  overflow: hidden;
+  font-family: $font;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+label,
+span {
+  font-family: $font;
+}
+
+.container {
+  width: 40em;
+  margin: 0 auto;
+  background-color: $white;
+  transition: all 500ms;
+  border-radius: 0.15em;
+  transform: translateY(2em);
+  padding: 1em;
+}
+@media screen and (max-width: 700px) {
+  .container {
+    width: 38em;
+  }
+  .react-calendar {
+    font-size: 1.8em;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container {
+    width: 28em;
+  }
+  .month .react-calendar {
+    button {
+      padding: 12px;
+      font-size: 1em;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .container {
+    width: 20em;
+  }
+  .month .react-calendar {
+    button {
+      padding: 3px;
+      font-size: 0.8em;
+    }
+  }
+}
