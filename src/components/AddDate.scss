@@ -47,30 +47,6 @@
 .form-group div:nth-child(3) label {
   text-align: center;
 }
-.buttons {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: baseline;
-  margin-bottom: 1em;
-  margin-left: 3em;
-  .button {
-    outline: none;
-    border: 0;
-    border-radius: 0.1em;
-    font-size: 4em;
-    padding: 0.2em 0.7em;
-    color: $blue;
-    background-color: $grey;
-    transition: all 700ms;
-    &:last-child {
-      background-color: $grey;
-      color: $red;
-    }
-    &:hover {
-      color: $dark_rose;
-    }
-  }
-}
 .field {
   display: flex;
   align-items: center;
@@ -84,7 +60,7 @@
   }
   input,
   textarea {
-    font-size: 2em;
+    font-size: 1.5em;
     margin-left: 1em;
     color: $dark_rose;
     &::placeholder {

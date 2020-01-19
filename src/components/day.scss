@@ -1,0 +1,52 @@
+@import "../styles/variables";
+.day-view {
+  font-family: $font;
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  height: auto;
+  border-radius: 2em;
+  background-color: $blue;
+  padding: 1em;
+  h1 {
+    color: $dark_rose;
+    align-self: flex-end;
+    font-size: 3em;
+  }
+  hr {
+    color: $dark_rose;
+  }
+  .day-time {
+    color: $white;
+    font-size: 1.5em;
+  }
+  .day-description {
+    color: $white;
+    margin-bottom: 2em;
+    table {
+      width: 100%;
+    }
+    tr {
+      font-size: 1.5em;
+    }
+    th {
+      text-align: left;
+      text-transform: capitalize;
+      border-bottom: 0.1em solid $dark_rose;
+      text-align: left;
+      font-weight: 200;
+      margin-right: 0.4em;
+      color: $grey;
+      width: 20%;
+      padding: 0.3em;
+      &:last-child {
+        width: 50%;
+      }
+    }
+    td {
+      font-size: 0.7em;
+      padding: 0.3em;
+      border-bottom: 0.2em solid $yellow;
+    }
+  }
+}

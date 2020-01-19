@@ -33,7 +33,19 @@ const DayView: FC<Props> = ({
 
     history.push(`/modify/${path}`);
   };
-  return <Day date={{ ...state.newDate, id: path }} onModify={onModify} />;
+  const onNavigate = () => history.push("/");
+  const data = () => {
+    return {
+      ...state.newDate,
+      fields: {
+        title: [],
+        description: [],
+        time: [],
+        type: []
+      }
+    };
+  };
+  return <Day date={data()} onModify={onModify} onNavigate={onNavigate} />;
 };
 
 export default withRouter(withContext(DayView));

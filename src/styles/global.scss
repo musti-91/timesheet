@@ -28,6 +28,18 @@ span {
   transform: translateY(2em);
   padding: 1em;
 }
+.actions {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  button {
+    outline: none;
+    border: 0;
+    border-radius: 1em;
+    font-size: 2em;
+    padding: 1em;
+  }
+}
 @media only screen and (max-width: 700px) {
   .container {
     width: 38em;

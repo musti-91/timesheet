@@ -86,7 +86,7 @@ const AddDate: FC<Props> = ({ asyncState, onAddDate, onCancel }) => {
             {...description}
           />
         </div>
-        <div className="buttons">
+        <div className="actions">
           <button className="button" type="submit">
             Add
           </button>

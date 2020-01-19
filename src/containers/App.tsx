@@ -15,9 +15,14 @@ interface Props {}
  **/
 /**
  ** TODO
- * 1: responsive
+ * 1: Responsive: ViewDate,
  * 2: Secure site with auth
  * 3: backend
+ * 4: Make description filed table
+ * |Ticket Nr|Type| Howlong |Description|
+ * Type: Help, Review, Work on
+ * HowLong: 30min etc.
+ * Description: if there is any.
  */
 /**
  *
