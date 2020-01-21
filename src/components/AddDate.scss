@@ -71,3 +71,28 @@
     }
   }
 }
+.field-table {
+  margin: 2em;
+  text-align: left;
+  th,
+  tr,
+  td {
+    input,
+    textarea,
+    select {
+      outline: 0;
+      border: 0;
+      border-radius: 0.2em;
+      padding: 1em;
+      color: $dark_rose;
+    }
+    select,
+    textarea {
+      height: 3em;
+      padding: 0;
+    }
+  }
+  tr {
+    width: 100%;
+  }
+}

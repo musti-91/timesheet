@@ -3,6 +3,7 @@ import React, { createContext, useReducer } from "react";
 interface iState {
   loading: boolean;
   isAddMode: boolean;
+  day?: string;
   newDate: any;
   isEditMode: boolean;
   editDate: any;
@@ -22,6 +23,7 @@ export const reducer = (state: iState, { type, payload }: Action): iState => {
     case "ADD_MODE":
       return {
         ...state,
+        day: payload,
         isAddMode: true
       };
     case "ADD_SUCCESS":

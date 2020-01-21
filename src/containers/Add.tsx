@@ -18,9 +18,14 @@ interface Props {
 
 export interface AddState {
   title: string;
-  description: string;
   start: string;
   end: string;
+  data: {
+    tickets: string[];
+    descriptions: string[];
+    times: string[];
+    types: string[];
+  };
 }
 /**
 
@@ -50,6 +55,7 @@ const Add: FC<Props> = ({ location, history, store: { state, dispatch } }) => {
   };
   return (
     <AddDate
+      day={state.day}
       onAddDate={onAddDate}
       onCancel={() => history.push("/")}
       asyncState={state.editDate}

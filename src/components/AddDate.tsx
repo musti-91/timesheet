@@ -1,9 +1,11 @@
 import React, { FC, useState } from "react";
 import { AddState } from "../containers/Add";
 import "./AddDate.scss";
+import TableFields from "./TableFields";
 interface Props {
   onAddDate: (fields: AddState) => void;
   onCancel: () => void;
+  day?: string;
   asyncState: {
     title: string;
     description: string;
@@ -16,31 +18,47 @@ interface Props {
  * @author
  * @function @AddDate
  **/
+const data = {
+  ticket: ["SAYS-1818", "SAYS-6616"],
+  type: ["Review", "Help"],
+  time: [0.3, 0.4], // hours
+  description: ["Created within", "created within another work"]
+};
 
-const AddDate: FC<Props> = ({ asyncState, onAddDate, onCancel }) => {
+const AddDate: FC<Props> = ({ asyncState, onAddDate, onCancel, day }) => {
   const title = useInputField((asyncState && asyncState.title) || "");
-  const description = useInputField(
-    (asyncState && asyncState.description) || ""
-  );
   const startTime = useInputField((asyncState && asyncState.start) || "");
   const leavingTime = useInputField((asyncState && asyncState.end) || "");
+
+  const [rows, setRows] = useState<string[]>(["row-1"]);
+
+  const [tickets, setTickets] = useState<string[]>([]);
+  const [types, setTypes] = useState<string[]>([]);
+  const [timesSpent, setTimesSpent] = useState<string[]>([]);
+  const [description, setDescription] = useState<string[]>([]);
 
   const submitForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const fields = {
       title: title.value,
-      description: description.value,
       start: startTime.value,
-      end: leavingTime.value
+      end: leavingTime.value,
+      data: { tickets, descriptions: description, times: timesSpent, types }
     };
     // TODO validation
     onAddDate(fields);
   };
 
+  const onAddRow = () => {
+    let clickCount = 1;
+    clickCount += 1;
+
+    setRows([...rows, `row-${clickCount}`]);
+  };
   return (
     <div className={"add-date"}>
-      <h2>{asyncState && asyncState.title ? "Modify Date" : "Add Date"}</h2>
+      <h2>{asyncState && asyncState.title ? "Modify Date" : day}</h2>
       <form className="form-group" onSubmit={submitForm}>
         <div className="time-fields">
           <div className="field">
@@ -75,17 +93,14 @@ const AddDate: FC<Props> = ({ asyncState, onAddDate, onCancel }) => {
             {...title}
           />
         </div>
-        <div className="field">
-          <label htmlFor="description">Description</label>
-          <textarea
-            className="description-field"
-            id="description"
-            rows={2}
-            cols={5}
-            placeholder={"* ticket:23"}
-            {...description}
-          />
-        </div>
+        <TableFields
+          onTimeChange={time => setTimesSpent([...timesSpent, time])}
+          onDescriptionChange={desc => setDescription([...description, desc])}
+          onTicketChange={ticket => setTickets([...tickets, ticket])}
+          onTypeSelect={type => setTypes([...types, type])}
+          setTableRows={onAddRow}
+          rows={rows}
+        />
         <div className="actions">
           <button className="button" type="submit">
             Add

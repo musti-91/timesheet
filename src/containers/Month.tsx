@@ -18,7 +18,8 @@ const Month: FC<Props> = ({ store, history }) => {
     const { dispatch } = store;
 
     dispatch({
-      type: "ADD_MODE"
+      type: "ADD_MODE",
+      payload: id
     });
     return history.push(`/new/${id.toLowerCase()}`);
   };

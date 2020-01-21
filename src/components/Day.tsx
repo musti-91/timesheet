@@ -3,10 +3,15 @@ import "./day.scss";
 interface Props {
   date: {
     title: string;
-    description: string;
     start: string;
     end: string;
     id: string;
+    data: {
+      tickets: string[];
+      types: string[];
+      times: string[];
+      descriptions: string[];
+    };
     [key: string]: any;
   };
   onModify: () => void;
@@ -28,8 +33,8 @@ const Day: FC<Props> = ({ date, onModify, onNavigate }) => {
     <div className="day-view">
       <h1>23 Jan 2020</h1>
       <div className="day-time">
-        <h5>From: 33:00 AM</h5>
-        <h5>Till: 33:00 PM</h5>
+        <h5>From: {date.start} AM</h5>
+        <h5>Till: {date.end} PM</h5>
         <hr />
         <h5>Extra: 3 hour</h5>
       </div>
@@ -37,18 +42,18 @@ const Day: FC<Props> = ({ date, onModify, onNavigate }) => {
         <table>
           <thead>
             <tr>
-              {Object.keys(data).map((key, i) => (
+              {Object.keys(date.data).map((key, i) => (
                 <th key={i}>{key}</th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {data.ticket.map((ticket, id) => (
+            {date.data.tickets.map((ticket, id) => (
               <tr key={id}>
                 <td>{ticket}</td>
-                <td>{data.type[id]}</td>
-                <td>{data.time[id]} hour(s)</td>
-                <td>{data.description[id]}</td>
+                <td>{date.data.types[id]}</td>
+                <td>{date.data.times[id]} hour(s)</td>
+                <td>{date.data.descriptions[id]}</td>
               </tr>
             ))}
           </tbody>
