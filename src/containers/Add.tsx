@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { withRouter } from "react-router";
-import AddDate from "../components/AddDate";
+import AddDate from "../components/Add";
 import { iStore, withContext } from "./Context";
 
 interface Location {

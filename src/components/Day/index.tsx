@@ -1,5 +1,6 @@
 import React, { FC } from "react";
-import "./day.scss";
+// import styles from "./Day.module.scss";
+
 interface Props {
   date: {
     title: string;
@@ -22,12 +23,13 @@ interface Props {
  * @author
  * @function @Day
  **/
-const data = {
-  ticket: ["SAYS-1818", "SAYS-6616"],
-  type: ["Review", "Help"],
-  time: [0.3, 0.4], // hours
-  description: ["Created within", "created within another work"]
-};
+// const data = {
+//   ticket: ["SAYS-1818", "SAYS-6616"],
+//   type: ["Review", "Help"],
+//   time: [0.3, 0.4], // hours
+//   description: ["Created within", "created within another work"]
+// };
+
 const Day: FC<Props> = ({ date, onModify, onNavigate }) => {
   return (
     <div className="day-view">

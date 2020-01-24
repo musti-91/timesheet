@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { withRouter } from "react-router-dom";
-import { default as MonthComponent } from "../components/Month";
+import MonthView from "../components/Month";
 import { iStore, withContext } from "./Context";
 
 interface Props {
@@ -23,7 +23,7 @@ const Month: FC<Props> = ({ store, history }) => {
     });
     return history.push(`/new/${id.toLowerCase()}`);
   };
-  return <MonthComponent onClickDay={onClickDay} />;
+  return <MonthView onClickDay={onClickDay} />;
 };
 
 export default withRouter(withContext(Month));

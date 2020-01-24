@@ -18,7 +18,12 @@ label,
 span {
   font-family: $font;
 }
-
+button,
+input,
+textarea {
+  outline: none;
+  border: 0;
+}
 .container {
   max-width: 60em;
   margin: 0 auto;
@@ -28,18 +33,7 @@ span {
   transform: translateY(2em);
   padding: 1em;
 }
-.actions {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  button {
-    outline: none;
-    border: 0;
-    border-radius: 0.6em;
-    font-size: 2em;
-    padding: 1em;
-  }
-}
+
 @media only screen and (max-width: 700px) {
   .container {
     width: 38em;

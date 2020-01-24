@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Calendar from "react-calendar";
-import "./Month.scss";
+import styles from "./Month.module.scss";
 
 interface Props {
   onClickDay: (id: string) => void;
@@ -11,17 +11,16 @@ interface Props {
  * @function @Month
  **/
 
-const Month: FC<Props> = ({ onClickDay }) => {
-  //Thu Jan 16 2020 00:00:00 GMT+0100 (Central European Standard Time)
-
+const MonthView: FC<Props> = ({ onClickDay }) => {
   const format = (date: string) => {
     const splitted = date.split(" ");
     return `${splitted[0]}-${splitted[1]}-${splitted[2]}`;
   };
 
   return (
-    <div className="month">
+    <div className={styles.month}>
       <Calendar
+        className={styles["react-calendar"]}
         onChange={() => {}}
         value={new Date()}
         onClickDay={date => onClickDay(format(date.toString()))}
@@ -30,4 +29,4 @@ const Month: FC<Props> = ({ onClickDay }) => {
   );
 };
 
-export default Month;
+export default MonthView;

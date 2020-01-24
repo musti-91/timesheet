@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Redirect, Route, Router, Switch } from "react-router-dom";
-import NotFound from "../components/NotFound";
+import NotFound from "../components/NotFound/NotFound";
 import history from "../utils/history";
 import Add from "./Add";
 import Provider from "./Context";

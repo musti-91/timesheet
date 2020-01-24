@@ -1,0 +1,26 @@
+@import "../../styles/variables";
+.field {
+  label {
+    color: $coral;
+    width: 5em;
+    font-size: 2em;
+  }
+  input {
+    outline: none;
+    border: 0;
+    margin-left: 1em;
+    font-size: 1em;
+    border: 0.059em solid $blue;
+    padding: .5em;
+    border-radius: 0.2em;
+    margin: 0 0 1em 1em;
+    color: $coral;
+    font-family: $font;
+    min-width: 3em;
+    max-width: 20em;
+  }
+  input[type="text"] {
+    width: 15em;
+    font-size: 1.4em;
+  }
+}

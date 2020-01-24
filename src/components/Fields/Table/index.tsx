@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-
+import styles from "./Table.module.scss";
 interface Props {
   onTicketChange: (ticket: string) => void;
   onTimeChange: (time: string) => void;
@@ -24,7 +24,7 @@ const TableFields: FC<Props> = ({
   rows
 }) => {
   return (
-    <div className="field-table">
+    <div className={styles.element}>
       <table>
         <thead>
           <tr>

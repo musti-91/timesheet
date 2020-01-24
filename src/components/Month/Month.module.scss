@@ -1,0 +1,40 @@
+@import "../../styles/variables";
+
+.month {
+  padding: 0.4em;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  .react-calendar {
+    width: 100%;
+    border: 0;
+    font-size: 2em;
+    transition: $transition;
+    abbr[title] {
+      text-decoration: none;
+      border-bottom: 1px solid $blue;
+    }
+    abbr[title="Saturday"],
+    abbr[title="Sunday"] {
+      color: red;
+    }
+    button {
+      font-size: 1.5em;
+      border-radius: 0.5em;
+      transition: $transition;
+      &:hover {
+        background-color: $coral;
+        color: $white;
+        transform: scale(1.1);
+        font-size: 1.2;
+      }
+    }
+    > :first-child {
+      height: 70px;
+      &:hover button {
+        transform: none;
+      }
+    }
+  }
+}
