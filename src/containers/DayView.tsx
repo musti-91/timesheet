@@ -33,6 +33,7 @@ const DayView: FC<Props> = ({
 
     history.push(`/modify/${path}`);
   };
+
   const onNavigate = () => history.push("/");
   const data = () => {
     return {

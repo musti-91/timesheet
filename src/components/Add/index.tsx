@@ -21,12 +21,6 @@ interface Props {
  * @author
  * @function @AddDate
  **/
-// const data = {
-//   ticket: ["SAYS-1818", "SAYS-6616"],
-//   type: ["Review", "Help"],
-//   time: [0.3, 0.4], // hours
-//   description: ["Created within", "created within another work"]
-// };
 
 const AddDate: FC<Props> = ({ asyncState, onAddDate, onCancel, day }) => {
   const title = useInputField((asyncState && asyncState.title) || "");

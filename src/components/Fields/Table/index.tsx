@@ -55,8 +55,10 @@ const TableFields: FC<Props> = ({
               </td>
               <td>
                 <select onChange={e => onTypeSelect(e.target.value)}>
-                  {TYPES.map(type => (
-                    <option value={type}>{type}</option>
+                  {TYPES.map((type, ind) => (
+                    <option value={type} key={`${type}-${ind}`}>
+                      {type}
+                    </option>
                   ))}
                 </select>
               </td>

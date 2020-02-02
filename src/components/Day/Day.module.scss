@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.day-view {
+.element {
   font-family: $font;
   display: flex;
   flex-direction: column;
@@ -17,11 +17,11 @@
   hr {
     color: $dark_rose;
   }
-  .day-time {
+  .time {
     color: $white;
     font-size: 1.5em;
   }
-  .day-description {
+  .description {
     color: $white;
     margin-bottom: 2em;
     table {

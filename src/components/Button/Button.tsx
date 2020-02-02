@@ -8,7 +8,6 @@ interface Props {
   variant?: "DANGER" | "SUCCESS" | string;
 }
 
-const BLUE = "rgb(16, 156, 236)";
 const Button: FC<Props> = ({ title, onClick, type, variant }) => {
   let backgroundColor;
   if (variant === "SUCCESS") {
